@@ -13,8 +13,8 @@ class ProductRepositoryTest {
 
 
     private Book first = new Book(1, "first", 100, "author1", 50, 2021);
-    private Book second = new Book(2, "second", 100, "author1",100,1999);
-    private Book third = new Book(3, "first", 200, "author2", 51,1984);
+    private Book second = new Book(2, "second", 100, "author1", 100, 1999);
+    private Book third = new Book(3, "first", 200, "author2", 51, 1984);
     private Book fourth = new Book(4, "third", 300, "author3", 201, 2007);
     private Book fifth = new Book(5, "fourth", 200, "author3", 333, 1651);
 
@@ -31,12 +31,12 @@ class ProductRepositoryTest {
 
     @Test
     void souldRemoveByIdExist() {
-            repository.removeById(3);
+        repository.removeById(3);
 
-            Product[] expected = new Product[]{first, second,fourth,fifth};
-            Product[] actual = repository.findAll();
-            assertArrayEquals(expected, actual);
-        }
+        Product[] expected = new Product[]{first, second, fourth, fifth};
+        Product[] actual = repository.findAll();
+        assertArrayEquals(expected, actual);
+    }
 
     @Test
     void shouldRemoveByIdNotExist() {
